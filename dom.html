@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dom操作</title>
+</head>
+<body>
+    <div class="wrap">
+        <div class="apple">苹果</div>
+        <div class="pear">梨子</div>
+    </div>
+    <script>
+        const parent=document.querySelector('.wrap');
+        const apple = document.querySelector('.apple');
+        const pear = parent.childNodes[3];
+        console.log(pear);
+        const newfrag=document.createDocumentFragment();
+        const newnode=document.createElement('div');
+        const newtext=document.createTextNode('柚子');
+
+        newnode.appendChild(newtext);
+        newfrag.appendChild(newnode);
+        parent.appendChild(newfrag);
+
+        const oldnode=parent.removeChild(pear);
+
+        parent.insertBefore(oldnode,apple);
+        parent.replaceChild(pear, apple);
+
+        const attr=pear.attributes;
+        const attrc=pear.getAttribute('class');
+        pear.setAttribute('title', "我的梨子");
+        console.log(attr);
+        console.log(attrc);
+
+    </script>
+</body>
+</html>

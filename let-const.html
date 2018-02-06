@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        function f1() {
+            let n = 5;
+            if (true) {
+                let n = 10;
+            }
+            console.log(n); // 5
+        }
+        function f2() {
+            var n2 = 5;
+            if (true) {
+                var n2 = 10;
+                console.log(n2); // 10
+            }
+            console.log(n2); // 10
+        }
+        function f3() {
+            var n3 = 5;
+            var n3 = 10;
+            console.log(n3); // 10
+        }
+        /* var name1 = "liu";
+        function name() {
+            var name1 = "zhu";
+        }
+        name();
+        alert(name1);   //liu   同名变量的定义被覆盖 */
+
+        var name1 = "liu";
+        function name() {
+            name1 = "zhu";
+        }
+        name();
+        alert(name1);
+
+        function f1() {
+            let n = 5;
+            if (true) {
+                let n = 10;
+                console.log(n);
+            }
+            console.log(n); // 5
+        }
+
+        f1();
+        f2();
+        f3();
+    </script>
+</body>
+</html>
+

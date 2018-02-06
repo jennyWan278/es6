@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var add = function foo(a, b) {
+            var s=typeof foo;     //foo只在函数内部作用域中有效
+            console.log(s);   // function
+            console.log(a + b);
+        }
+        var d=typeof foo;   //undefined
+        console.log(d);
+        add(1,2);
+
+        let x = 1;
+        let y = 2;
+
+        [x, y] = [y, x];
+        console.log(x);
+        console.log(y);
+    </script>
+</body>
+</html>

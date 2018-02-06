@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var s = "hello, world" ;
+        var ar=s.charAt(0);
+        console.log(ar);   //h
+        console.log(s);    //hello,world
+
+        var sub= s.substring(1, 4);
+        console.log(sub);   //ell
+        console.log(s);     //hello,world
+
+        var sli=s.slice(1, 4);
+        console.log(sli);    //ell
+        console.log(s);      //hello,world
+
+        var ind=s.indexOf("l",3);
+        console.log(ind);    //3
+        console.log(s);      //hello,world
+
+        var spl= s.replace("h", "H") ;
+        console.log(spl);    //Hello,world
+        console.log(s);
+
+        var spt = s.split(',');
+        console.log(spt);    ["hello","world"]
+        console.log(s);
+
+        var re = /(\w+)\s+(\w+)/;
+        
+        var str = "John Smith";
+        var num=str.match(re);
+        console.log(num);
+        var newstr = str.replace(re, "$2 $1");
+        console.log(newstr);    // Smith, John
+        console.log(s);
+
+
+        var str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+        var regexp = /[A-E]+/gi;
+        var matches_array = str.match(regexp);
+
+        console.log(matches_array);
+
+        //将数字和字符分开来
+        const str1='89 + 7 * 5 - 9 / 3 + 0.5';
+        const stp=str1.split(' ');
+        let arrd=[];
+        let arrw=[];
+        stp.map(function(ele,index) {
+            if(index%2===0)
+            {
+                arrd.push(ele);
+            }
+            else{
+                arrw.push(ele);
+            }
+            
+        })
+        console.log(stp);
+        console.log(arrd);
+        console.log(arrw);
+
+        var strd=str1.match(/(\d+)/g);
+        var strw = str1.match(/(\w+)/g);
+       /*  console.log(strd);
+        console.log(strw); */
+
+        var m1='{"xxxx":"balabala","department":["7606418475131112177", "7606418475131112178", "7606418475131112179"],"xxxx":"balabala"}';
+        var m2=m1.match(/"(\d+)"/g);
+        console.log(m2);
+        var n1=m1.replace(/"(\d+)"/g, '$1');
+        console.log(n1);
+
+    </script>
+</body>
+</html>
